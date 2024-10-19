@@ -2,7 +2,7 @@ import IllustrationImage from '@/assets/illustration.webp';
 
 export default function Illustration() {
   return (
-    <div className="flex-1 flex flex-col items-center md:items-start justify-between h-full">
+    <div className="flex-1 flex flex-col items-center md:items-start justify-center h-full">
       <img
         src={IllustrationImage}
         alt="illustration"
