@@ -58,11 +58,29 @@
   }
 }
 
+:root,
+html,
+body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  .red {
+    @apply text-red-600;
+  }
+
+  .blue {
+    @apply text-blue-600;
   }
 }

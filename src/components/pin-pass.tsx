@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect } from 'react';
+import { ChangeEvent } from 'react';
 import { Input } from './ui/input';
 import { Slider } from './ui/slider';
 
@@ -27,11 +27,13 @@ export default function PinPassword({
       setPin([6]);
       return;
     } else {
-      if (parseInt(value) > 16) {
+      if (parseInt(value) < 3) {
         setPin([6]);
+        pinPassGenerator(6);
         return;
-      } else if (parseInt(value) < 3) {
-        setPin([6]);
+      } else if (parseInt(value) > 9) {
+        setPin([16]);
+        pinPassGenerator(16);
         return;
       } else {
         setPin([parseInt(value)]);
@@ -39,11 +41,6 @@ export default function PinPassword({
       }
     }
   };
-
-  // This effect will generate the pin password on mount
-  useEffect(() => {
-    pinPassGenerator(pin[0]);
-  }, []);
 
   return (
     <div className="mt-4">
